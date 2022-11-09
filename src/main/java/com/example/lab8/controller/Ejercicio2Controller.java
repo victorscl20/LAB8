@@ -15,8 +15,8 @@ public class Ejercicio2Controller {
 
     @Autowired
     Ejercicio2Dao ejercicio2Dao;
-    @GetMapping({"/product/list","/product"})
-    public String listarProductos(Model model){
+    @GetMapping("/lista")
+    public String lista(Model model){
         model.addAttribute("listaCoin",ejercicio2Dao.listarCoin());
         return "static/ejercicio2";
     }
