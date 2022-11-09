@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/reserva")
@@ -17,6 +19,11 @@ public class ReservaController {
 
     @Autowired
     ReservaRepository reservaRepository;
+
+    @GetMapping("/listarReserva")
+    public List<Reserva> listaReservas() {
+        return reservaRepository.findAll();
+    }
 
     @PostMapping("/guardar")
     public ResponseEntity<HashMap<String,String>> crearReserva(
