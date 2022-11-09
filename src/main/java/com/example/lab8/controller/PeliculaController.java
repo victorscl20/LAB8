@@ -1,7 +1,7 @@
-package com.example.lab8.Controllers;
+package com.example.lab8.controller;
 
-import com.example.lab8.Entities.Pelicula;
-import com.example.lab8.Repositories.PeliculaRepository;
+import com.example.lab8.entity.Pelicula;
+import com.example.lab8.repository.PeliculaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
