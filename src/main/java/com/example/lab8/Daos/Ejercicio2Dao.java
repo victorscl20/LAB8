@@ -10,7 +10,7 @@ import java.util.List;
 
 @Component
 public class Ejercicio2Dao {
-    public List<Coin> listarCoin(int n){
+    public List<Coin> listarCoin(){
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Coin[]> response = restTemplate.getForEntity(
                 "https://api.coinstats.app/public/v1/coins?limit=70", Coin[].class);
