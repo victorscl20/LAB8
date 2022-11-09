@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 @Getter
 @Setter
-public class Coin implements Serializable {
+public class Coin {
     private String id;
     private String icon;
     private String name;
