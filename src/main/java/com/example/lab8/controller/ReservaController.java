@@ -37,4 +37,14 @@ public class ReservaController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(hashMap);
     }
+
+    @GetMapping("/eliminarReserva")
+    public ResponseEntity<HashMap<String,String>> eliminarReserva( @RequestParam("id") Integer id){
+        HashMap<String,String> hashMap = new HashMap<>();
+
+        reservaRepository.deleteById(id);
+        hashMap.put("ReservaEliminada", "Reservaeliminada");
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(hashMap);
+    }
 }
