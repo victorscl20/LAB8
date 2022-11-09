@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -47,4 +48,20 @@ public class ReservaController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(hashMap);
     }
+
+    @GetMapping("/actualizarReserva")
+    public ResponseEntity<HashMap<String,String>> actualizarReserva( @RequestParam("id") Optional<Integer> id,
+                                                                     @RequestParam("idpel") Optional<Integer> idpel,
+                                                                     @RequestParam("fecha") Optional<String> fecha,
+                                                                     @RequestParam("horain") Optional<String> horain,
+                                                                     @RequestParam("horafin") Optional<String> horafin
+                                                                     ){
+        HashMap<String,String> hashMap = new HashMap<>();
+        reservaRepository.actualizar_reserva(id.get(),idpel.get(),fecha.get(),horain.get(), horafin.get());
+        hashMap.put("Reservaactualizada", "ReserAct");
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(hashMap);
+    }
+
+
 }
