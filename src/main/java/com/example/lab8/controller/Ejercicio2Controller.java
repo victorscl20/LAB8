@@ -23,8 +23,8 @@ public class Ejercicio2Controller {
 
     @GetMapping({"/news/list","/news"})
     public String listarNoticias(Model model){
-        model.addAttribute("listaCoin",ejercicio2Dao.listarCoin());
-        return "static/ejercicio2";
+        model.addAttribute("listaNews",ejercicio2Dao.listarNews());
+        return "static/ejercicio2p2";
     }
 
 }
